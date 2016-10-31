@@ -3,9 +3,6 @@
     <sound type="unload" src="unload.wav" />
     <sound type="highlight" src="highlight.wav" />
     <sound type="select" src="select.wav" />
-<!--Imageless background example-->
-    <!--This layout does not use containers here is an example of one used as a background. These can be any size-->
-    <!-- <container backgroundColor="262626" backgroundAlpha="1.0" x="0" y="0" height="stretch" width="stretch" layer="0"/> -->
 
 <!--Background Image-->
 <image src="background.png" x="0" y="0" height="stretch" width="stretch" layer="0"/>
@@ -50,7 +47,7 @@
     <menu type="custom" imageType="logo" scrollTime=".24" scrollAcceleration=".04" orientation="horizontal" x="0" width="center" y="center" yOffset="260" algorithm="easeincircular" >
     <!-- itemDefaults allow you to set default attributes for all items in a menu list An item may still have its own attributes that override the defaults -->
     <!-- Notice that xOffset and yOffset are set to center. This puts a pin in the very center of the image(or item). Normally it is in the top left corner of the image. From that pin we will put the coordinates of where we wish the image to be. In this case the the center of the screen x="center" and y="center". Now yOffset="260" is moves the image 260 additional pixels towards the bottom. yOffset="-260" would move it 260 pixels towards the top -->
-        <itemDefaults x="center" y="center" yOrigin="center" xOrigin="center" width="300" spacing="10" yOffset="260" alpha="0.5" fontSize="35" layer="6"/>
+        <itemDefaults x="center" y="center" yOrigin="center" xOrigin="center" width="300" spacing="30" yOffset="260" alpha="0.5" fontSize="35" layer="6"/>
         <!-- In this menu each item is placed. notice that the first and last item of this menu are alpha="0" if this is not done you would see the last time of the menu move to be the first when scrolling. -->
         <item xOffset="-1420" alpha="0" />
         <item xOffset="-1060">
@@ -91,15 +88,15 @@
         </item>
         <!-- This is the Selected item of the menu we override the width and alpha here to make it more clear that it is indeed selected  -->
         <!-- we also have animations inplace so that this logo stays visable and moves to another location when entering the sub menu -->
-        <item selected="true" width="400" layer="7" alpha="1">
+        <item selected="true" width="500" layer="7" alpha="1">
             <onMenuExit>
-                <set duration=".4">
-                    <animate type="xOffset" from="0" to="-710" algorithm="easeinquadratic"/>
+                <set duration=".1">
+                    <animate type="alpha" from="1" to="0" algorithm="easeinquadratic"/>
                 </set>
             </onMenuExit>
             <onMenuEnter>
-                <set duration=".4">
-                    <animate type="xOffset" from="-710" to="0" algorithm="easeinquadratic"/>
+                <set duration=".1">
+                    <animate type="alpha" from="1" to="1" algorithm="easeinquadratic"/>
                 </set>
             </onMenuEnter>
         </item>
@@ -188,17 +185,17 @@
                 </set>
             </onMenuExit>
         </item>
-        <!-- This is the Selected item of the menu we override the width and alpha here to make it more clear that it is indeed selected  -->
-        <!-- we also have animations inplace so that this logo stays visable and moves to another location when entering the sub menu -->
-        <item selected="true" width="400" layer="7" alpha="1">
+
+        <!-- Logo del juego seleccionado -->
+        <item selected="true" width="500" layer="7" alpha="1" yOffset="-50">
             <onMenuExit>
-                <set duration=".4">
-                    <animate type="xOffset" from="0" to="-710" algorithm="easeinquadratic"/>
+                <set duration=".1">
+                    <animate type="alpha" from="1" to="0" algorithm="easeinquadratic"/>
                 </set>
             </onMenuExit>
             <onMenuEnter>
-                <set duration=".4">
-                    <animate type="xOffset" from="-710" to="0" algorithm="easeinquadratic"/>
+                <set duration=".1">
+                    <animate type="alpha" from="1" to="1" algorithm="easeinquadratic"/>
                 </set>
             </onMenuEnter>
         </item>
